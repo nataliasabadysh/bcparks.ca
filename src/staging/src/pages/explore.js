@@ -40,6 +40,7 @@ import parksLogo from "../images/Mask_Group_5.png"
 
 import "../styles/search.scss"
 import { PARK_NAME_TYPE } from "../utils/constants";
+import { renderHTML } from "../utils/helpers";
 
 export const query = graphql`
   query {
@@ -942,7 +943,7 @@ export default function Explore({ location, data }) {
                                             className="p10t"
                                           >
                                             <h3 className="park-heading-text">
-                                              {r.parkNames.find(getParkName).parkName || r.protectedAreaName }
+                                              {renderHTML(r.parkNames.find(getParkName)?.parkName) || r.protectedAreaName }
                                             </h3>
                                           </Link>
 
@@ -1137,7 +1138,7 @@ export default function Explore({ location, data }) {
                                             className="p10t"
                                           >
                                             <h3 className="park-heading-text">
-                                            {r.parkNames.find(getParkName).parkName || r.protectedAreaName }
+                                            {renderHTML(r.parkNames.find(getParkName).parkName) || r.protectedAreaName }
                                             </h3>
                                           </Link>
                                         </div>

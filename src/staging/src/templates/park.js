@@ -14,7 +14,7 @@ import {
 import { makeStyles } from "@material-ui/core/styles"
 import useScrollSpy from "react-use-scrollspy"
 
-import { capitalizeFirstLetter } from "../utils/helpers";
+import { capitalizeFirstLetter, renderHTML } from "../utils/helpers";
 
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -236,7 +236,8 @@ export default function ParkTemplate({ data }) {
     mapZoom: park.mapZoom,
   }
 
-  const parkName = park.parkNames.find(item=> item.parkNameType === PARK_NAME_TYPE.Escaped).parkName || park.protectedAreaName
+
+  const parkName = renderHTML(park.parkNames.find(item=> item.parkNameType === PARK_NAME_TYPE.Escaped)?.parkName) || park.protectedAreaName
 
   const breadcrumbs = [
     <Link key="1" href="/">
@@ -250,11 +251,13 @@ export default function ParkTemplate({ data }) {
     </div>,
   ]
 
+
   return (
     <div className="grey-background">
       <Helmet>
-        <title>BC Parks | {parkName}</title>
+        <title content={ parkName || "BC Parks" }/>
       </Helmet>
+
       <Header mode="internal" content={menuContent} />
       <ScrollToTop />
       <CssBaseline />
