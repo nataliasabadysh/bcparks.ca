@@ -4,7 +4,6 @@ import { Grid, Button, Box, Paper } from "@material-ui/core"
 
 import Advisory from "./advisory"
 import ParkAccessStatus from "./parkAccessStatus"
-import { renderHTML } from "../../utils/helpers";
 export default function ParkHeader({
   parkName,
   hasReservations,
