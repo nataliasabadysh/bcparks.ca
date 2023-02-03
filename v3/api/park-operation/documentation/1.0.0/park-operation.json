@@ -1,0 +1,1141 @@
+{
+  "paths": {
+    "/park-operations": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Park-operation"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Park-operation"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPark-operation"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/park-operations/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Park-operation"
+        ],
+        "parameters": []
+      }
+    },
+    "/park-operations/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Park-operation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Park-operation"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPark-operation"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Park-operation"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Park-operation": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "orcsSiteNumber": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "hasReservations": {
+            "type": "boolean"
+          },
+          "openDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "closeDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "hasFirstComeFirstServed": {
+            "type": "boolean"
+          },
+          "hasBackcountryReservations": {
+            "type": "boolean"
+          },
+          "hasBackcountryPermits": {
+            "type": "boolean"
+          },
+          "hasDayUsePass": {
+            "type": "boolean"
+          },
+          "reservationUrl": {
+            "type": "string"
+          },
+          "backcountryReservationUrl": {
+            "type": "string"
+          },
+          "backcountryPermitUrl": {
+            "type": "string"
+          },
+          "dayUsePassUrl": {
+            "type": "string"
+          },
+          "hasParkGate": {
+            "type": "boolean"
+          },
+          "offSeasonUse": {
+            "type": "boolean"
+          },
+          "totalCapacity": {
+            "type": "string"
+          },
+          "frontcountrySites": {
+            "type": "string"
+          },
+          "reservableSites": {
+            "type": "string"
+          },
+          "nonReservableSites": {
+            "type": "string"
+          },
+          "vehicleSites": {
+            "type": "string"
+          },
+          "vehicleSitesReservable": {
+            "type": "string"
+          },
+          "doubleSites": {
+            "type": "string"
+          },
+          "pullThroughSites": {
+            "type": "string"
+          },
+          "rvSites": {
+            "type": "string"
+          },
+          "rvSitesReservable": {
+            "type": "string"
+          },
+          "electrifiedSites": {
+            "type": "string"
+          },
+          "longStaySites": {
+            "type": "string"
+          },
+          "walkInSites": {
+            "type": "string"
+          },
+          "walkInSitesReservable": {
+            "type": "string"
+          },
+          "groupSites": {
+            "type": "string"
+          },
+          "groupSitesReservable": {
+            "type": "string"
+          },
+          "backcountrySites": {
+            "type": "string"
+          },
+          "wildernessSites": {
+            "type": "string"
+          },
+          "boatAccessSites": {
+            "type": "string"
+          },
+          "horseSites": {
+            "type": "string"
+          },
+          "cabins": {
+            "type": "string"
+          },
+          "huts": {
+            "type": "string"
+          },
+          "yurts": {
+            "type": "string"
+          },
+          "shelters": {
+            "type": "string"
+          },
+          "boatLaunches": {
+            "type": "string"
+          },
+          "openNote": {
+            "type": "string"
+          },
+          "serviceNote": {
+            "type": "string"
+          },
+          "reservationsNote": {
+            "type": "string"
+          },
+          "offSeasonNote": {
+            "type": "string"
+          },
+          "generalNote": {
+            "type": "string"
+          },
+          "adminNote": {
+            "type": "string"
+          },
+          "protectedArea": {
+            "required": [
+              "id",
+              "orcs",
+              "isDisplayed"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "orcs": {
+                "type": "integer"
+              },
+              "protectedAreaName": {
+                "type": "string"
+              },
+              "totalArea": {
+                "type": "number"
+              },
+              "uplandArea": {
+                "type": "number"
+              },
+              "marineArea": {
+                "type": "number"
+              },
+              "marineProtectedArea": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "class": {
+                "type": "string"
+              },
+              "establishedDate": {
+                "type": "string"
+              },
+              "repealedDate": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "oldUrl": {
+                "type": "string"
+              },
+              "typeCode": {
+                "type": "string",
+                "enum": [
+                  "PK",
+                  "PA",
+                  "RA",
+                  "ER",
+                  "CS"
+                ]
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "mapZoom": {
+                "type": "integer"
+              },
+              "hasDayUsePass": {
+                "type": "boolean"
+              },
+              "isFogZone": {
+                "type": "boolean"
+              },
+              "featureId": {
+                "type": "integer"
+              },
+              "sites": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parkActivities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parkFacilities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parkNames": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "hasCampfireBan": {
+                "type": "boolean"
+              },
+              "hasSmokingBan": {
+                "type": "boolean"
+              },
+              "fireZones": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "managementAreas": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "hasCampfireBanOverride": {
+                "type": "boolean"
+              },
+              "hasSmokingBanOverride": {
+                "type": "boolean"
+              },
+              "campfireBanRescindedDate": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "safetyInfo": {
+                "type": "string"
+              },
+              "specialNotes": {
+                "type": "string"
+              },
+              "locationNotes": {
+                "type": "string"
+              },
+              "parkContact": {
+                "type": "string"
+              },
+              "reservations": {
+                "type": "string"
+              },
+              "maps": {
+                "type": "string"
+              },
+              "managementPlanning": {
+                "type": "string"
+              },
+              "natureAndCulture": {
+                "type": "string"
+              },
+              "partnerships": {
+                "type": "string"
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "reconciliationNotes": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "isDisplayed": {
+                "type": "boolean"
+              },
+              "parkOperationSubAreas": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parkOperation": {
+                "type": "string"
+              },
+              "parkSubPages": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "seo": {
+                "type": "component"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "site": {
+            "required": [
+              "id",
+              "siteName",
+              "isDisplayed",
+              "orcsSiteNumber",
+              "protectedArea"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "siteName": {
+                "type": "string"
+              },
+              "siteNumber": {
+                "type": "integer"
+              },
+              "status": {
+                "type": "string"
+              },
+              "isDisplayed": {
+                "type": "boolean"
+              },
+              "establishedDate": {
+                "type": "string"
+              },
+              "repealedDate": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "mapZoom": {
+                "type": "integer"
+              },
+              "orcsSiteNumber": {
+                "type": "string"
+              },
+              "protectedArea": {
+                "type": "string"
+              },
+              "parkActivities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "parkFacilities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "isUnofficialSite": {
+                "type": "boolean"
+              },
+              "note": {
+                "type": "string"
+              },
+              "hasDayUsePass": {
+                "type": "boolean"
+              },
+              "description": {
+                "type": "string"
+              },
+              "locationNotes": {
+                "type": "string"
+              },
+              "reservations": {
+                "type": "string"
+              },
+              "parkOperation": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewPark-operation": {
+        "properties": {
+          "orcsSiteNumber": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "hasReservations": {
+            "type": "boolean"
+          },
+          "openDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "closeDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "hasFirstComeFirstServed": {
+            "type": "boolean"
+          },
+          "hasBackcountryReservations": {
+            "type": "boolean"
+          },
+          "hasBackcountryPermits": {
+            "type": "boolean"
+          },
+          "hasDayUsePass": {
+            "type": "boolean"
+          },
+          "reservationUrl": {
+            "type": "string"
+          },
+          "backcountryReservationUrl": {
+            "type": "string"
+          },
+          "backcountryPermitUrl": {
+            "type": "string"
+          },
+          "dayUsePassUrl": {
+            "type": "string"
+          },
+          "hasParkGate": {
+            "type": "boolean"
+          },
+          "offSeasonUse": {
+            "type": "boolean"
+          },
+          "totalCapacity": {
+            "type": "string"
+          },
+          "frontcountrySites": {
+            "type": "string"
+          },
+          "reservableSites": {
+            "type": "string"
+          },
+          "nonReservableSites": {
+            "type": "string"
+          },
+          "vehicleSites": {
+            "type": "string"
+          },
+          "vehicleSitesReservable": {
+            "type": "string"
+          },
+          "doubleSites": {
+            "type": "string"
+          },
+          "pullThroughSites": {
+            "type": "string"
+          },
+          "rvSites": {
+            "type": "string"
+          },
+          "rvSitesReservable": {
+            "type": "string"
+          },
+          "electrifiedSites": {
+            "type": "string"
+          },
+          "longStaySites": {
+            "type": "string"
+          },
+          "walkInSites": {
+            "type": "string"
+          },
+          "walkInSitesReservable": {
+            "type": "string"
+          },
+          "groupSites": {
+            "type": "string"
+          },
+          "groupSitesReservable": {
+            "type": "string"
+          },
+          "backcountrySites": {
+            "type": "string"
+          },
+          "wildernessSites": {
+            "type": "string"
+          },
+          "boatAccessSites": {
+            "type": "string"
+          },
+          "horseSites": {
+            "type": "string"
+          },
+          "cabins": {
+            "type": "string"
+          },
+          "huts": {
+            "type": "string"
+          },
+          "yurts": {
+            "type": "string"
+          },
+          "shelters": {
+            "type": "string"
+          },
+          "boatLaunches": {
+            "type": "string"
+          },
+          "openNote": {
+            "type": "string"
+          },
+          "serviceNote": {
+            "type": "string"
+          },
+          "reservationsNote": {
+            "type": "string"
+          },
+          "offSeasonNote": {
+            "type": "string"
+          },
+          "generalNote": {
+            "type": "string"
+          },
+          "adminNote": {
+            "type": "string"
+          },
+          "protectedArea": {
+            "type": "string"
+          },
+          "site": {
+            "type": "string"
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": []
+}
